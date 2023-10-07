@@ -305,12 +305,12 @@ html, body {
 
     .score-con {
         max-width: 100%;
-        width: 370px;
+        width: 345px;
         border: 4px solid hsl(217, 16%, 45%);
         margin-inline: 2rem;
         padding: 23px 35px;
         margin-top: 70px;
-        margin-left: 40px;
+        margin-left: 30px;
         max-height: 20vh;
     }
 
@@ -319,7 +319,7 @@ html, body {
     }
 
     .score {
-        height: 130%;
+        height: 120%;
     }
 
     .score p {
@@ -356,18 +356,18 @@ html, body {
     }
 
     .scissor-con {
-        right: 2rem;
+        right: 1.7rem;
         top: -2%;
     }
 
     .rock-con {
-        left: 9.5rem;
+        left: 8.0rem;
         top: 68%;
 
     }
 
     .paper-con {
-        left: 2rem;
+        left: 1.1rem;
         top: -2%;
     }
 
@@ -383,8 +383,8 @@ html, body {
 
     .btn {
         width: 100%;
-        margin-left: 423px;
-        margin-top: -64px;    
+        margin-left: 400px;
+        margin-top: 5px;    
         display: flex;
         justify-content: center;
         align-items: center;
@@ -397,12 +397,12 @@ html, body {
     }
 
     .rule-img {
-        margin-left: 70px;
-        margin-top: -170px;
+        margin-left: 25px;
+        margin-top: -375px;
     }
 
     .rule {
-        margin: 0rem 0rem 0 0rem;
+        max-width: 200px;
     }
 
     .win-modal {
