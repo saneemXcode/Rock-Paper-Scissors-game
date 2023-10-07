@@ -1,0 +1,417 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 150vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    font-family: system-ui;
+    overflow: hidden;
+}
+
+.score-con {
+    max-width: 100%;
+    width: 700px;
+    border: 4px solid hsl(217, 16%, 45%);
+    margin: 2rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px 35px;
+    color: white;
+    max-height: 23vh;
+}
+
+.logo {
+    font-size: 27px;
+}
+
+.logo p {
+    font-family: cursive;
+}
+
+.score {
+
+    height: 92%;
+    padding: 10px 36px;
+    background: #feee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+
+
+}
+
+.score p {
+    color: hsl(229, 64%, 46%);
+    font-size: 18px;
+}
+
+.score span {
+    color: hsl(229, 25%, 31%);
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.game-con {
+    width: 100%;
+    min-height: 69vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game-con .info {
+    width: 700px;
+    min-height: 7vh;
+    font-size: 1.2rem;
+    margin: -40px 0 0 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.option {
+    max-width: 100%;
+    width: 700px;
+    min-height: 45vh;
+    /* margin-bottom: 35px; */
+    display: grid;
+    place-content: center;
+    position: relative;
+    padding-top: 4%;
+
+}
+
+.con {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    padding: 18px;
+    cursor: pointer;
+
+
+}
+
+.computer {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    padding: 18px;
+    display: none;
+}
+
+.scissor-con {
+    background: linear-gradient(hsl(39, 89%, 49%), hsl(49, 84%, 53%));
+    right: 9rem;
+    top: 7%;
+
+}
+
+.rock-con {
+    background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    left: 17.5rem;
+    top: 63%;
+}
+
+.paper-con {
+    background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    left: 9rem;
+    top: 7%;
+}
+
+.item {
+    background: #feee;
+    border-radius: 50%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.user,
+.machine {
+    opacity: 0;
+    color: white;
+    margin-top: 30px;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 10rem 1rem 0;
+    margin-block: -60px;
+}
+
+.btn-rule:hover {
+    background-color: gray;
+    color: white;
+    transform: scaleX(0.9);
+
+}
+
+.btn-rule {
+    padding: 8px 30px;
+    border: 2px solid hsl(217, 16%, 45%);
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    letter-spacing: 3px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-rule:hover {
+    background-color: gray;
+    color: white;
+    transform: scaleX(0.9);
+
+}
+
+.rule-modal {
+    position: fixed;
+    width: 100%;
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 0;
+    display: none;
+
+}
+
+.rule-modal::before {
+    position: absolute;
+    content: '';
+    background: #000;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+}
+
+.rule-img {
+    z-index: 1;
+    background: #feee;
+    padding: 10px 22px;
+    border-radius: 10px;
+    transform: translateY(-200%);
+    transition: all 0.4s ease;
+}
+
+.rule-img div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.rule-img div p {
+    font-size: 26px;
+    font-weight: 700;
+    border-bottom: 1px solid black;
+
+}
+
+.close {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.rule {
+    margin: 1rem 1rem 0 1rem;
+}
+
+.win-modal {
+    position: fixed;
+    width: 100%;
+    height: 150vh;
+    display: grid;
+    place-content: center;
+    top: 0;
+    text-align: center;
+    display: none;
+}
+
+.win-modal::before {
+    position: absolute;
+    content: '';
+    background: #000;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+}
+
+.winner,
+.play {
+    z-index: 1;
+
+}
+
+.winner {
+    color: white;
+    padding-bottom: 1rem;
+
+}
+
+.play {
+    color: #feee;
+    letter-spacing: 3px;
+    background: hsl(349, 71%, 52%);
+    outline: none;
+    cursor: pointer;
+    padding: 11px 30px;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+
+}
+.play:hover{
+    background-color: #1fb4dd;
+    color: black;
+    transform: scale(0.9);
+}
+
+.show {
+    left: 6.5rem;
+    top: 7%;
+}
+
+.right {
+    left: 28rem;
+    top: 3%;
+}
+
+@media only screen and (max-width: 600px) {
+html, body {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+
+    .score-con {
+        max-width: 100%;
+        width: 370px;
+        border: 4px solid hsl(217, 16%, 45%);
+        margin-inline: 2rem;
+        padding: 23px 35px;
+        margin-top: 70px;
+        margin-left: 40px;
+        max-height: 20vh;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .score {
+        height: 130%;
+    }
+
+    .score p {
+        font-size: 20px;
+    }
+
+    .score span {
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+    .game-con .info {
+        width: 400px;
+        margin: -16px 130px 0 150px;
+    }
+
+    .option {
+        max-width: 100%;
+        width: 400px;
+        min-height: 45vh;
+        padding-top: 1%;
+        left: 0px;
+
+    }
+
+    .con {
+        width: 100px;
+        height: 100px;
+    }
+
+    .computer {
+        width: 100px;
+        height: 100px;
+    }
+
+    .scissor-con {
+        right: 2rem;
+        top: -2%;
+    }
+
+    .rock-con {
+        left: 9.5rem;
+        top: 68%;
+
+    }
+
+    .paper-con {
+        left: 2rem;
+        top: -2%;
+    }
+
+    .show {
+        left: 2.0rem;
+        top: 8%;
+    }
+
+    .right {
+        left: 15.5rem;
+        top: 8%;
+    }
+
+    .btn {
+        width: 100%;
+        margin-left: 423px;
+        margin-top: -64px;    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .btn-rule{
+        width: 100px;
+        font-size: 15px;
+        padding-left: 25px;
+    }
+
+    .rule-img {
+        margin-left: 70px;
+        margin-top: -170px;
+    }
+
+    .rule {
+        margin: 0rem 0rem 0 0rem;
+    }
+
+    .win-modal {
+        top: -125px;
+        left: 0px;
+    }
+    .item img{
+        width: 30px;
+        height: 30px;
+    }
+
+}
