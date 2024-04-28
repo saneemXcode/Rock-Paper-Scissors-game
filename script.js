@@ -63,10 +63,18 @@ play.addEventListener("click",()=>{
 });
 
 rulebtn.addEventListener("click",()=>{
+    const screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if (screenWidth <= 600) {
     ruleModal.style.display="flex";
    setTimeout(()=>{
-    ruleimg.style.transform="translateY(0)";
+    ruleimg.style.transform="translateY(0%)";
    },400)
+}else {
+    ruleModal.style.display="flex";
+    setTimeout(()=>{
+     ruleimg.style.transform="translateY(-30%)";
+    },400)
+}
 });
 
 let close=document.querySelector(".close");
